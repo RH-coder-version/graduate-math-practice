@@ -94,3 +94,17 @@
 /* Keep the saved personal quote quiet and compact. */
 
 .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* Black is a crisp light theme, with dark accents only on selected controls. */
+:root[data-theme="black"]{--theme:#171717;--green:#171717;--ink:#171717;--bg:#f5f5f5;--mint:#eeeeee;--line:#d9d9d9;--muted:#666666}
+:root[data-theme="black"] body{background:#f5f5f5;color:#171717}
+:root[data-theme="black"] :is(.sidebar,header,.question-card,.index-card,.paper-intro,.paper-question,.paper-finish,.exam-reminder,.knowledge-review,.cram-overview){background:#fff;color:#171717;border-color:#d9d9d9}
+:root[data-theme="black"] :is(.nav.active,.chapter.active){background:#171717;color:#fff}
+:root[data-theme="black"] :is(.nav.active b,.chapter.active .number,.chapter.active b){color:#fff;background:transparent}
+:root[data-theme="black"] :is(.primary,.paper-nav a){background:#171717;color:#fff;border-color:#171717}
+:root[data-theme="black"] :is(.secondary,select,.search-row){background:#fff;color:#262626;border-color:#c7c7c7}
+:root[data-theme="black"] :is(.knowledge-review>summary,.tip-card,.cram-focus,.worked-example>summary){background:#f1f1f1;color:#262626;border-color:#d9d9d9}
+:root[data-theme="black"] :is(textarea,.paper-question textarea){background:#fafafa;color:#171717;border-color:#c7c7c7}
+:root[data-theme="black"] :is(.side-label,.sidebar-section>summary,.source,.write-label,.heading p,.coverage,.breadcrumb){color:#666}
+:root[data-theme="black"] .sidebar-toggle{background:#fff;color:#171717;border-color:#ccc;box-shadow:0 2px 8px #00000012}
+:root[data-theme="black"] .heading-art{color:#d0d0d0}
