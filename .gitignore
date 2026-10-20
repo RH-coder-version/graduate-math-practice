@@ -1,0 +1,15 @@
+# Local sources and intermediate extraction / generation files
+/tmp/
+/*.pdf
+/*.doc
+/*.docx
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+.env
+.env.*
+*学习记录*.json
+practice/*preview*.png
+practice/*preview*.jpg
+practice/markdown-cache-fixed.png

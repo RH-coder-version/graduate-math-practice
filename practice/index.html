@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>研习题库 · 数值分析与数理统计</title><link rel="stylesheet" href="vendor/node_modules/katex/dist/katex.min.css?v=d4ab5b8ee169"><link rel="stylesheet" href="style.css?v=aed2bd9eb369"></head>
+<body>
+<button id="sidebarToggle" class="sidebar-toggle" aria-controls="studySidebar" aria-expanded="true" title="收起侧栏">‹</button>
+<aside class="sidebar" id="studySidebar">
+<a class="brand" href="#"><span class="brand-icon">∑</span><span>研习题库<small>STUDY WORKSPACE</small></span></a>
+<div class="side-label">学习空间</div>
+<button class="nav active" data-mode="practice"><span>▦</span> 知识点练习</button>
+<button class="nav" data-mode="banks"><span>▤</span> 按题库刷题</button>
+<button class="nav" data-mode="wrong"><span>◇</span> 我的错题 <b id="wrongCount">0</b></button>
+<button class="nav" data-mode="reference"><span>▧</span> 资料原页</button>
+<div class="side-label chapter-label">知识点目录 <span>按学习顺序</span></div>
+<div id="chapters"></div>
+<div class="side-bottom"><span class="green-dot"></span> 本地学习记录<small>错题与笔记保存在此浏览器</small><a id="downloadMarkdown" class="text-btn" download>下载本学科 Markdown ↓</a><button id="export" class="text-btn">导出学习记录 ↗</button><button id="import" class="text-btn">导入记录</button><input id="importFile" type="file" accept="application/json" hidden></div>
+</aside>
+<main>
+<header><div class="breadcrumb">我的学习空间 <span>/</span> <b id="modeCrumb">知识点练习</b></div><div class="header-right"><span class="preview">Markdown 题面 · 详解版</span><span class="avatar">学</span></div></header>
+<div class="content">
+<div class="subject-switch" role="group" aria-label="选择科目"><button data-subject="numerical">∑ <span>数值分析</span></button><button data-subject="statistics">σ <span>数理统计</span></button><small>选择科目，开始今天的练习</small></div><div class="heading"><div><div class="eyebrow">一步一步，把方法学扎实</div><h1 id="title">数值分析，逐题掌握<span>。</span></h1><p id="subtitle">按知识点循序练习，也可以回到熟悉的那份试卷。</p></div><div class="heading-art" aria-hidden="true">f(x)<span>≈</span></div></div>
+<div class="stats"><div><span class="stat-icon">▤</span><p>Markdown 练习题<strong id="total">—</strong></p><small>原题图片保留公式</small></div><div><span class="stat-icon blue">✓</span><p>已完成<strong id="doneCount">0</strong></p><small id="donePercent">开始你的第一题</small></div><div><span class="stat-icon orange">◇</span><p>待复习错题<strong id="wrongStat">0</strong></p><small>每次纠错，都是进步</small></div></div>
+<div id="library" hidden></div>
+<section id="workspace">
+<div class="toolbar"><div class="tabs"><button id="order" class="selected">顺序练习</button><button id="shuffle">随机一题</button></div><div class="filters"><select id="topicFilter" aria-label="选择知识点"></select><select id="bankFilter" aria-label="选择题库"></select><select id="statusFilter" aria-label="筛选完成状态"><option value="all">全部状态</option><option value="todo">未完成</option><option value="done">已完成</option><option value="answer">有独立参考答案</option></select></div></div>
+<div class="search-row"><span>⌕</span><input id="search" placeholder="搜索知识点、题目关键词或原题编号…" aria-label="搜索题目"><span id="resultCount"></span></div>
+<details id="knowledgeReview" class="knowledge-review" open><summary><span>知识背景 · 研一上</span><strong id="knowledgeTitle"></strong><span class="review-toggle">展开 / 收起</span></summary><div class="knowledge-inner"><div class="knowledge-controls"><label for="knowledgeTopic">复习知识点</label><select id="knowledgeTopic" aria-label="复习知识点"></select><button id="followQuestion" class="text-btn">回到本题知识点</button><a id="knowledgeDownload" class="text-btn" download>下载本科目复习讲义 ↓</a></div><div id="knowledgeContent" class="markdown-body"></div><p class="knowledge-end">先合上讲解，试着回答自测，再做下面的题目。</p></div></details><div class="study-layout"><article class="question-card" id="questionCard"></article><aside class="study-aside"><div class="index-card"><div class="card-heading"><h3>题目导航</h3><span id="position"></span></div><div class="legend"><span><i></i>未完成</span><span><i class="solved"></i>已完成</span><span><i class="wrong"></i>错题</span></div><div id="questionGrid"></div><div id="gridPaging"></div></div><div class="tip-card"><span>✦</span><h3>先动笔，再看答案</h3><p>把推导过程写下来，比只看一遍答案更有效。不会的题先标记，之后集中复习。</p><div>理解方法 · 留意误差 · 核对结果</div></div><div class="coverage" id="coverage"></div></aside></div>
+</section>
+<footer>研习题库 <span>让每一道题，都成为下一步的基础。</span></footer>
+</div>
+</main>
+<dialog id="viewer"><button id="closeViewer" aria-label="关闭原图">×</button><img id="viewerImage" alt="放大原题"><p>点击空白处或按 Esc 关闭</p></dialog><div id="toast" role="status"></div>
+<script src="vendor/node_modules/markdown-it/dist/browser/markdown-it.umd.min.js?v=391f2aa638e7"></script><script src="vendor/node_modules/katex/dist/katex.min.js?v=103a53763cc0"></script><script src="markdown-render.js?v=c88ab1df6c2c"></script><script src="data.js?v=6b0c0bb02b80"></script><script src="answers.js?v=559b55a3519e"></script><script src="knowledge.js?v=45357950acc9"></script><script src="app.js?v=115c5b47c16b"></script>
+</body></html>

@@ -1,0 +1,100 @@
+[
+  {
+    "id": "b0",
+    "name": "1--数值分析期末复习题",
+    "source": "1--数值分析期末复习题.pdf",
+    "aliases": [],
+    "pages": 5,
+    "kind": "bank"
+  },
+  {
+    "id": "b1",
+    "name": "18-21数值分析试题扫描版",
+    "source": "18-21数值分析试题扫描版.pdf",
+    "aliases": [],
+    "pages": 9,
+    "kind": "bank"
+  },
+  {
+    "id": "b2",
+    "name": "2--数值分析复习题及答案",
+    "source": "2--数值分析复习题及答案.pdf",
+    "aliases": [],
+    "pages": 34,
+    "kind": "bank"
+  },
+  {
+    "id": "b3",
+    "name": "2020数值分析考卷",
+    "source": "2020数值分析考卷.pdf",
+    "aliases": [
+      "数值分析2020(1).pdf"
+    ],
+    "pages": 2,
+    "kind": "bank"
+  },
+  {
+    "id": "b4",
+    "name": "2021年数值分析",
+    "source": "2021年数值分析.pdf",
+    "aliases": [],
+    "pages": 2,
+    "kind": "bank"
+  },
+  {
+    "id": "b5",
+    "name": "数值分析2014年模拟题",
+    "source": "数值分析2014年模拟题.pdf",
+    "aliases": [],
+    "pages": 6,
+    "kind": "bank"
+  },
+  {
+    "id": "b6",
+    "name": "数值分析真题2023",
+    "source": "数值分析真题2023.pdf",
+    "aliases": [],
+    "pages": 2,
+    "kind": "bank"
+  },
+  {
+    "id": "b7",
+    "name": "数值分析题",
+    "source": "数值分析题.pdf",
+    "aliases": [],
+    "pages": 10,
+    "kind": "bank"
+  },
+  {
+    "id": "b8",
+    "name": "手写复习笔记",
+    "source": "鏁板€煎垎鏋_鏁板€煎垎鏋愬涔犻(1).pdf",
+    "aliases": [],
+    "pages": 10,
+    "kind": "reference"
+  },
+  {
+    "id": "b9",
+    "name": "数值分析知识点总结",
+    "source": "鏁板€煎垎鏋_鏁板€煎垎鏋愮煡璇嗙偣鎬荤粨.pdf",
+    "aliases": [],
+    "pages": 34,
+    "kind": "reference"
+  },
+  {
+    "id": "b10",
+    "name": "2011西安工程大学数值分析模拟题",
+    "source": "2011西安工程大学数值分析模拟题.pdf",
+    "aliases": [],
+    "pages": 2,
+    "kind": "reference"
+  },
+  {
+    "id": "b11",
+    "name": "数值分析模拟试题(1)",
+    "source": "数值分析模拟试题(1).pdf",
+    "aliases": [],
+    "pages": 2,
+    "kind": "bank"
+  }
+]
