@@ -108,3 +108,19 @@
 :root[data-theme="black"] :is(.side-label,.sidebar-section>summary,.source,.write-label,.heading p,.coverage,.breadcrumb){color:#666}
 :root[data-theme="black"] .sidebar-toggle{background:#fff;color:#171717;border-color:#ccc;box-shadow:0 2px 8px #00000012}
 :root[data-theme="black"] .heading-art{color:#d0d0d0}
+
+/* Strong black/white split: dark navigation, light study surface. */
+:root[data-theme="black"] .sidebar{background:#151515;color:#f5f5f5;border-right:1px solid #151515}
+:root[data-theme="black"] .sidebar :is(.school-motto,.theme-caption,.theme-caption strong,.theme-disclosure::after,.side-label,.sidebar-section>summary,.sidebar-section>summary small,.sidebar-section>summary::after,.chapter,.chapter .number,.chapter b,.nav,.side-bottom,.side-bottom .text-btn){color:#eaeaea}
+:root[data-theme="black"] .sidebar :is(.nav.active,.chapter.active){background:#fff;color:#111}
+:root[data-theme="black"] .sidebar :is(.chapter.active .number,.chapter.active b,.nav.active b){color:#111}
+:root[data-theme="black"] .sidebar :is(.nav:not(.active):hover,.chapter:not(.active):hover,.sidebar-section>summary:hover){background:#2b2b2b}
+:root[data-theme="black"] .sidebar .exam-reminder{background:#202020;border-color:#494949;color:#eee}
+:root[data-theme="black"] .sidebar .exam-reminder :is(.reminder-lead,strong,.reminder-wish){color:#eee}
+:root[data-theme="black"] .sidebar .reminder-wish{border-color:#494949}
+:root[data-theme="black"] .theme-swatch{box-shadow:0 0 0 1px #777}
+:root[data-theme="black"] .theme-swatch[aria-pressed="true"]{box-shadow:0 0 0 2px #fff;outline:2px solid #151515;outline-offset:2px}
+:root[data-theme="black"] .grid-btn.done{background:#fff;color:#111;border:2px solid #111;font-weight:700}
+:root[data-theme="black"] .grid-btn.current{background:#111;color:#fff;border-color:#111}
+:root[data-theme="black"] .grid-btn.wrong{background:#a65418;color:#fff;border-color:#a65418}
+:root[data-theme="black"] .legend i.solved{background:#fff;border:1px solid #111}
