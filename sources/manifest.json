@@ -215,5 +215,19 @@
     "file": "英语/新探索讲稿-U4+.docx",
     "sha256": "5af702910667f3198e7df10c384fa59d3a3d01f4226d467f664166b55b1c06e9",
     "bytes": 44834
+  },
+  {
+    "subject": "数值分析",
+    "original_filename": "复习参考.pdf",
+    "file": "数值分析/复习参考.pdf",
+    "sha256": "6755c04e18cd0f85575e863955dd991e33833d4f350067bb4cac6d19e8fa819a",
+    "bytes": 300718
+  },
+  {
+    "subject": "数理统计",
+    "original_filename": "第一套（2013）/试卷.pdf",
+    "file": "数理统计/2013级概率统计试卷（2014年出题）.pdf",
+    "sha256": "019df9ba643334fd6ca993d5ca29dc82f712e4a0993c65430060937129f40a31",
+    "bytes": 985813
   }
 ]

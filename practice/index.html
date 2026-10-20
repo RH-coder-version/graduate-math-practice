@@ -1,17 +1,49 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>研习题库 · 数值分析、数理统计与英语</title><link rel="stylesheet" href="vendor/node_modules/katex/dist/katex.min.css?v=d4ab5b8ee169"><link rel="stylesheet" href="style.css?v=aed2bd9eb369"></head>
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><script src="theme.js?v=33827634f5c0"></script><title>研习题库 · 数值分析、数理统计与英语</title><link rel="stylesheet" href="vendor/node_modules/katex/dist/katex.min.css?v=d4ab5b8ee169"><link rel="stylesheet" href="style.css?v=2911fb05137f"></head>
 <body>
 <button id="sidebarToggle" class="sidebar-toggle" aria-controls="studySidebar" aria-expanded="true" title="收起侧栏">‹</button>
 <aside class="sidebar" id="studySidebar">
-<a class="brand" href="#"><span class="brand-icon">∑</span><span>研习题库<small>STUDY WORKSPACE</small></span></a>
-<div class="side-label">学习空间</div>
+<a class="brand school-brand" href="#" aria-label="西安工程大学 · 研习题库"><img class="school-logo" src="assets/xpu-logo.png" alt="西安工程大学 XI’AN POLYTECHNIC UNIVERSITY" width="323" height="82"></a>
+<p class="school-motto">厚德弘毅，博学笃行</p>
+<details class="theme-picker" id="themePicker"><summary class="theme-caption"><span>界面配色</span><strong id="themeName">西安工程蓝</strong><span class="theme-disclosure" aria-hidden="true"></span></summary><div class="theme-options" role="group" aria-label="选择界面颜色">
+<button class="theme-swatch" data-theme-choice="blue" style="--swatch:#19529a" aria-label="西安工程蓝" title="西安工程蓝" aria-pressed="true"></button>
+<button class="theme-swatch" data-theme-choice="purple" style="--swatch:#660099" aria-label="紫色" title="紫色" aria-pressed="false"></button>
+<button class="theme-swatch" data-theme-choice="green" style="--swatch:#176342" aria-label="绿色" title="绿色" aria-pressed="false"></button>
+<button class="theme-swatch" data-theme-choice="teal" style="--swatch:#11616a" aria-label="青色" title="青色" aria-pressed="false"></button>
+<button class="theme-swatch" data-theme-choice="amber" style="--swatch:#92501b" aria-label="橙色" title="橙色" aria-pressed="false"></button>
+<button class="theme-swatch" data-theme-choice="rose" style="--swatch:#a32650" aria-label="玫红" title="玫红" aria-pressed="false"></button>
+<button class="theme-swatch" data-theme-choice="red" style="--swatch:#a32323" aria-label="红色" title="红色" aria-pressed="false"></button>
+<button class="theme-swatch" data-theme-choice="indigo" style="--swatch:#4338a0" aria-label="靛蓝" title="靛蓝" aria-pressed="false"></button>
+<button class="theme-swatch" data-theme-choice="cyan" style="--swatch:#086881" aria-label="湖蓝" title="湖蓝" aria-pressed="false"></button>
+<button class="theme-swatch" data-theme-choice="brown" style="--swatch:#794c32" aria-label="棕色" title="棕色" aria-pressed="false"></button>
+<button class="theme-swatch" data-theme-choice="olive" style="--swatch:#596522" aria-label="橄榄绿" title="橄榄绿" aria-pressed="false"></button>
+<button class="theme-swatch" data-theme-choice="graphite" style="--swatch:#424952" aria-label="石墨灰" title="石墨灰" aria-pressed="false"></button>
+<button class="theme-swatch" data-theme-choice="black" style="--swatch:#000000" aria-label="黑色" title="黑色" aria-pressed="false"></button>
+</div></details>
+<details class="sidebar-section" id="learningSection" open><summary>学习空间</summary><div class="sidebar-section-body">
 <button class="nav active" data-mode="practice"><span>▦</span> 知识点练习</button>
+<button class="nav" data-mode="cram"><span>⚡</span> 考前突击</button>
+<button class="nav" data-mode="mock"><span>▣</span> 模拟押题卷</button>
+<button class="nav" data-mode="randomPaper"><span>⤨</span> 随机组卷</button>
 <button class="nav" data-mode="banks"><span>▤</span> 按题库刷题</button>
 <button class="nav" data-mode="wrong"><span>◇</span> 我的错题 <b id="wrongCount">0</b></button>
 <button class="nav" data-mode="reference"><span>▧</span> 资料原页</button>
-<div class="side-label chapter-label">知识点目录 <span>按学习顺序</span></div>
-<div id="chapters"></div>
+</div></details>
+<details class="sidebar-section" id="knowledgeSection" open><summary>知识点目录 <small>按学习顺序</small></summary><div class="sidebar-section-body" id="chapters"></div></details>
+<details class="sidebar-section exam-reminder" id="reminderSection" open>
+<summary>温馨提示</summary>
+<div class="sidebar-section-body reminder-content">
+<p class="reminder-lead">考前花一分钟，检查随身物品。</p>
+<ul>
+<li><strong>证件：</strong>带好学生证或身份证，具体以考试通知要求为准。</li>
+<li><strong>计算器：</strong>需要且允许使用时记得携带，提前检查电量和按键。</li>
+<li><strong>文具：</strong>备好签字笔、备用笔芯，以及考试需要的其他文具。</li>
+<li><strong>时间与地点：</strong>提前确认考场和开考时间，留足路程时间，从容入场。</li>
+</ul>
+<p class="reminder-wish">认真审题，稳稳作答。<br>愿你的努力有所收获，祝您考试顺利！</p>
+</div>
+</details>
 <div class="side-bottom"><span class="green-dot"></span> 本地学习记录<small>错题与笔记保存在此浏览器</small><a id="downloadMarkdown" class="text-btn" download>下载本学科 Markdown ↓</a><button id="export" class="text-btn">导出学习记录 ↗</button><button id="import" class="text-btn">导入记录</button><input id="importFile" type="file" accept="application/json" hidden></div>
 </aside>
 <main>
@@ -19,9 +51,11 @@
 <div class="content">
 <div class="subject-switch" role="group" aria-label="选择科目"><button data-subject="numerical">∑ <span>数值分析</span></button><button data-subject="statistics">σ <span>数理统计</span></button><button data-subject="english">Aa <span>英语</span></button><small>选择科目，开始今天的练习</small></div><div class="heading"><div><div class="eyebrow">一步一步，把方法学扎实</div><h1 id="title">数值分析，逐题掌握<span>。</span></h1><p id="subtitle">按知识点循序练习，也可以回到熟悉的那份试卷。</p></div><div class="heading-art" aria-hidden="true">f(x)<span>≈</span></div></div>
 <div class="stats"><div><span class="stat-icon">▤</span><p>Markdown 练习题<strong id="total">—</strong></p><small>原题图片保留公式</small></div><div><span class="stat-icon blue">✓</span><p>已完成<strong id="doneCount">0</strong></p><small id="donePercent">开始你的第一题</small></div><div><span class="stat-icon orange">◇</span><p>待复习错题<strong id="wrongStat">0</strong></p><small>每次纠错，都是进步</small></div></div>
+<section id="paperWorkspace" hidden aria-label="模拟试卷"></section>
 <div id="library" hidden></div>
 <section id="workspace">
-<div class="toolbar"><div class="tabs"><button id="order" class="selected">顺序练习</button><button id="shuffle">随机一题</button></div><div class="filters"><select id="topicFilter" aria-label="选择知识点"></select><select id="bankFilter" aria-label="选择题库"></select><select id="statusFilter" aria-label="筛选完成状态"><option value="all">全部状态</option><option value="todo">未完成</option><option value="done">已完成</option><option value="answer">有独立参考答案</option></select></div></div>
+<section id="cramOverview" class="cram-overview" aria-label="考前突击覆盖清单" hidden></section>
+<div class="toolbar"><div class="tabs"><button id="order" class="selected">顺序练习</button><button id="shuffle">随机一题</button></div><div class="filters"><select id="topicFilter" aria-label="选择知识点"></select><select id="bankFilter" aria-label="选择题库"></select><select id="statusFilter" aria-label="筛选完成状态"><option value="all">全部状态</option><option value="todo">未完成</option><option value="done">已完成</option><option value="wrong">错题</option><option value="answer">有独立参考答案</option></select></div></div>
 <div class="search-row"><span>⌕</span><input id="search" placeholder="搜索知识点、题目关键词或原题编号…" aria-label="搜索题目"><span id="resultCount"></span></div>
 <details id="knowledgeReview" class="knowledge-review" open><summary><span>知识背景 · 研一上</span><strong id="knowledgeTitle"></strong><span class="review-toggle">展开 / 收起</span></summary><div class="knowledge-inner"><div class="knowledge-controls"><label for="knowledgeTopic">复习知识点</label><select id="knowledgeTopic" aria-label="复习知识点"></select><button id="followQuestion" class="text-btn">回到本题知识点</button><a id="knowledgeDownload" class="text-btn" download>下载本科目复习讲义 ↓</a></div><div id="knowledgeContent" class="markdown-body"></div><p class="knowledge-end">先合上讲解，试着回答自测，再做下面的题目。</p></div></details><div class="study-layout"><article class="question-card" id="questionCard"></article><aside class="study-aside"><div class="index-card"><div class="card-heading"><h3>题目导航</h3><span id="position"></span></div><div class="legend"><span><i></i>未完成</span><span><i class="solved"></i>已完成</span><span><i class="wrong"></i>错题</span></div><div id="questionGrid"></div><div id="gridPaging"></div></div><div class="tip-card"><span>✦</span><h3>先动笔，再看答案</h3><p>把推导过程写下来，比只看一遍答案更有效。不会的题先标记，之后集中复习。</p><div>理解方法 · 留意误差 · 核对结果</div></div><div class="coverage" id="coverage"></div></aside></div>
 </section>
@@ -29,5 +63,5 @@
 </div>
 </main>
 <dialog id="viewer"><button id="closeViewer" aria-label="关闭原图">×</button><img id="viewerImage" alt="放大原题"><p>点击空白处或按 Esc 关闭</p></dialog><div id="toast" role="status"></div>
-<script src="vendor/node_modules/markdown-it/dist/browser/markdown-it.umd.min.js?v=391f2aa638e7"></script><script src="vendor/node_modules/katex/dist/katex.min.js?v=103a53763cc0"></script><script src="markdown-render.js?v=c88ab1df6c2c"></script><script src="data.js?v=33c0b15e6875"></script><script src="answers.js?v=6ca296aae563"></script><script src="knowledge.js?v=9296be1a7bf7"></script><script src="app.js?v=bbb8880328d8"></script>
+<script src="vendor/node_modules/markdown-it/dist/browser/markdown-it.umd.min.js?v=391f2aa638e7"></script><script src="vendor/node_modules/katex/dist/katex.min.js?v=103a53763cc0"></script><script src="markdown-render.js?v=c88ab1df6c2c"></script><script src="data.js?v=38e70b825890"></script><script src="answers.js?v=fca62696331c"></script><script src="knowledge.js?v=5e541f296eb7"></script><script src="cram.js?v=9e6db27a2d86"></script><script src="papers-data.js?v=edfcc9d539a7"></script><script src="papers.js?v=978b0680db52"></script><script src="sidebar-preferences.js?v=8a061674a841"></script><script src="app.js?v=6b1e49951cf8"></script>
 </body></html>
