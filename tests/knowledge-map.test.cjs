@@ -1,0 +1,11 @@
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
+const nodes=new Map(),storage=new Map();function el(id){if(!nodes.has(id))nodes.set(id,{innerHTML:'',textContent:'',hidden:false,value:'',dataset:{},classList:{add(){},remove(){},toggle(){}},setAttribute(){},querySelector(){return null},scrollIntoView(){}});return nodes.get(id)}
+function boot(){const c={document:{querySelector:el,querySelectorAll:()=>[],body:el('body')},localStorage:{getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v)},setTimeout(){},console,renderMarkdown:s=>s};vm.createContext(c);for(const f of ['data.js','answers.js','knowledge.js','cram.js','papers-data.js','papers.js','knowledge-map.js','app.js'])vm.runInContext(fs.readFileSync('practice/'+f,'utf8'),c);return c}let c=boot();const run=s=>vm.runInContext(s,c);
+assert(run('DATA.topics.every(t=>KNOWLEDGE_MAP[t.id]?.length===3)'));assert(run("KNOWLEDGE_MAP.direct[1].includes('\\\\kappa')"));
+run("mode='map';switchSubject('numerical')");assert.equal(run('mode'),'map');assert.equal(el('#workspace').hidden,true);assert.equal((el('#mapWorkspace').innerHTML.match(/class="map-card"/g)||[]).length,9);
+run("state.knowledgeChecks.error=true;persist()");el('#mapMissing').onchange({target:{checked:true}});assert.equal((el('#mapWorkspace').innerHTML.match(/class="map-card"/g)||[]).length,8);
+c=boot();assert.equal(run('mode'),'map');assert(run('state.knowledgeChecks.error'));assert.equal((el('#mapWorkspace').innerHTML.match(/class="map-card"/g)||[]).length,8);
+run("switchSubject('statistics')");assert.equal(run('mode'),'map');assert.equal((el('#mapWorkspace').innerHTML.match(/class="map-card"/g)||[]).length,12);
+run("switchSubject('english')");assert.equal((el('#mapWorkspace').innerHTML.match(/class="map-card"/g)||[]).length,3);
+global.markdownit=require('../practice/vendor/node_modules/markdown-it');global.katex=require('../practice/vendor/node_modules/katex');vm.runInThisContext(fs.readFileSync('practice/markdown-render.js','utf8'));for(const texts of Object.values(run('KNOWLEDGE_MAP')))for(const text of texts)assert(!renderMarkdown(text).includes('katex-error'));
+console.log('PASS: all 24 categories, escaped formulas, topic counts, map subject switching, self-check filtering, persistence and formula rendering');

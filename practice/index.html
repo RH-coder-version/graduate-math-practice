@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><script src="theme.js?v=33827634f5c0"></script><title>研习题库 · 数值分析、数理统计与英语</title><link rel="stylesheet" href="vendor/node_modules/katex/dist/katex.min.css?v=d4ab5b8ee169"><link rel="stylesheet" href="style.css?v=f31784164617"></head>
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><script src="theme.js?v=33827634f5c0"></script><title>研习题库 · 数值分析、数理统计与英语</title><link rel="stylesheet" href="vendor/node_modules/katex/dist/katex.min.css?v=d4ab5b8ee169"><link rel="stylesheet" href="style.css?v=1861ef2f6440"></head>
 <body>
 <button id="sidebarToggle" class="sidebar-toggle" aria-controls="studySidebar" aria-expanded="true" title="收起侧栏">‹</button>
 <aside class="sidebar" id="studySidebar">
@@ -23,6 +23,7 @@
 </div></details>
 <details class="sidebar-section" id="learningSection" open><summary>学习空间</summary><div class="sidebar-section-body">
 <button class="nav active" data-mode="practice"><span>▦</span> 知识点练习</button>
+<button class="nav" data-mode="map"><span>⌘</span> 知识图谱</button>
 <button class="nav" data-mode="cram"><span>⚡</span> 考前突击</button>
 <button class="nav" data-mode="mock"><span>▣</span> 模拟押题卷</button>
 <button class="nav" data-mode="randomPaper"><span>⤨</span> 随机组卷</button>
@@ -51,6 +52,7 @@
 <div class="content">
 <div class="subject-switch" role="group" aria-label="选择科目"><button data-subject="numerical">∑ <span>数值分析</span></button><button data-subject="statistics">σ <span>数理统计</span></button><button data-subject="english">Aa <span>英语</span></button><small>选择科目，开始今天的练习</small></div><div class="heading"><div><div class="eyebrow">一步一步，把方法学扎实</div><h1 id="title">数值分析，逐题掌握<span>。</span></h1><p id="subtitle">按知识点循序练习，也可以回到熟悉的那份试卷。</p></div><div class="heading-art" aria-hidden="true">f(x)<span>≈</span></div></div>
 <div class="stats"><div><span class="stat-icon">▤</span><p>Markdown 练习题<strong id="total">—</strong></p><small>原题图片保留公式</small></div><div><span class="stat-icon blue">✓</span><p>已完成<strong id="doneCount">0</strong></p><small id="donePercent">开始你的第一题</small></div><div><span class="stat-icon orange">◇</span><p>待复习错题<strong id="wrongStat">0</strong></p><small>每次纠错，都是进步</small></div></div>
+<section id="mapWorkspace" aria-label="知识图谱" hidden></section>
 <section id="paperWorkspace" hidden aria-label="模拟试卷"></section>
 <div id="library" hidden></div>
 <section id="workspace">
@@ -63,5 +65,5 @@
 </div>
 </main>
 <dialog id="viewer"><button id="closeViewer" aria-label="关闭原图">×</button><img id="viewerImage" alt="放大原题"><p>点击空白处或按 Esc 关闭</p></dialog><div id="toast" role="status"></div>
-<script src="vendor/node_modules/markdown-it/dist/browser/markdown-it.umd.min.js?v=391f2aa638e7"></script><script src="vendor/node_modules/katex/dist/katex.min.js?v=103a53763cc0"></script><script src="markdown-render.js?v=c88ab1df6c2c"></script><script src="data.js?v=38e70b825890"></script><script src="answers.js?v=fca62696331c"></script><script src="knowledge.js?v=5e541f296eb7"></script><script src="cram.js?v=9e6db27a2d86"></script><script src="papers-data.js?v=edfcc9d539a7"></script><script src="papers.js?v=978b0680db52"></script><script src="sidebar-preferences.js?v=8a061674a841"></script><script src="app.js?v=6b1e49951cf8"></script>
+<script src="vendor/node_modules/markdown-it/dist/browser/markdown-it.umd.min.js?v=391f2aa638e7"></script><script src="vendor/node_modules/katex/dist/katex.min.js?v=103a53763cc0"></script><script src="markdown-render.js?v=c88ab1df6c2c"></script><script src="data.js?v=38e70b825890"></script><script src="answers.js?v=fca62696331c"></script><script src="knowledge.js?v=5e541f296eb7"></script><script src="cram.js?v=9e6db27a2d86"></script><script src="papers-data.js?v=edfcc9d539a7"></script><script src="papers.js?v=978b0680db52"></script><script src="sidebar-preferences.js?v=8a061674a841"></script><script src="knowledge-map.js?v=22c60a52e1cb"></script><script src="app.js?v=551c77c9fcc3"></script>
 </body></html>
